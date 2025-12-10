@@ -1,0 +1,59 @@
+{
+  "name": "@wix/vibe-restaurants-menus-plugin",
+  "version": "0.2.10",
+  "main": "dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.cjs"
+    }
+  },
+  "keywords": [
+    "vibe-plugin"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "jsdelivr": "dist/index.js",
+  "unpkg": "dist/index.js",
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix"
+  },
+  "dependencies": {
+    "@types/adm-zip": "^0.5.7",
+    "@wix/vibe-plugin-utils": "0.1.0",
+    "@wix/vibe-restaurants-menus-plugin-files": "0.2.10",
+    "@wix/wix-vibe-plugins": "^0.0.2",
+    "adm-zip": "^0.5.16",
+    "dedent": "^1.6.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "@wix/vibe-plugins-ci-utils": "0.1.0",
+    "eslint": "^9.26.0",
+    "tsup": "^8.1.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
+  },
+  "wix": {
+    "artifact": {
+      "groupId": "com.wixpress.ai-systems",
+      "artifactId": "vibe-restaurants-menus-plugin"
+    },
+    "validations": {
+      "postDependenciesBuild": [
+        "lint"
+      ]
+    }
+  },
+  "falconPackageHash": "7acaf87f8d0c85a4f20dd1481a94ea4b3cd9a1116d2dd7dcc866c44c"
+}
