@@ -10,7 +10,6 @@ import LocationPage from './pages/LocationPage';
 import ReviewsPage from './pages/ReviewsPage';
 import FAQsPage from './pages/FAQsPage';
 import BookingPage from './pages/BookingPage';
-import BookingsDashboardPage from './pages/BookingsDashboardPage';
 
 // Layout component that includes ScrollToTop
 function Layout() {
@@ -60,10 +59,6 @@ const router = createBrowserRouter([
       {
         path: "booking",
         element: <BookingPage />,
-      },
-      {
-        path: "bookings-dashboard",
-        element: <BookingsDashboardPage />,
       },
       {
         path: "*",
