@@ -77,6 +77,8 @@ export default function BookingsDashboardPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      {/* SEO: Prevent indexing by search engines */}
+      <meta name="robots" content="noindex, nofollow" />
       <Header />
       
       <main className="flex-1 w-full max-w-[100rem] mx-auto px-4 py-12">
