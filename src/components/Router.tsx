@@ -63,7 +63,7 @@ const router = createBrowserRouter([
         element: <BookingPage />,
       },
       {
-        path: "dashboard",
+        path: "bookings-dashboard",
         element: (
           <MemberProtectedRoute messageToSignIn="Sign in to access the bookings dashboard">
             <BookingsDashboardPage />
