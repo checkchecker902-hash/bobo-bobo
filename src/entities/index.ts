@@ -4,35 +4,6 @@
  */
 
 /**
- * Collection ID: bookings
- * Interface for Bookings
- */
-export interface Bookings {
-  _id: string;
-  _createdDate?: Date;
-  _updatedDate?: Date;
-  /** @wixFieldType text */
-  customerName?: string;
-  /** @wixFieldType text */
-  email?: string;
-  /** @wixFieldType text */
-  phone?: string;
-  /** @wixFieldType date */
-  bookingDate?: Date | string;
-  /** @wixFieldType time */
-  bookingTime?: any;
-  /** @wixFieldType number */
-  numberOfGuests?: number;
-  /** @wixFieldType text */
-  seatingType?: string;
-  /** @wixFieldType text */
-  specialRequests?: string;
-  /** @wixFieldType text */
-  bookingStatus?: string;
-}
-
-
-/**
  * Collection ID: chefs
  * Interface for Chefs
  */
@@ -42,7 +13,7 @@ export interface Chefs {
   _updatedDate?: Date;
   /** @wixFieldType text */
   chefName?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  /** @wixFieldType image */
   chefPhoto?: string;
   /** @wixFieldType text */
   shortIntroduction?: string;
@@ -69,7 +40,7 @@ export interface CustomerReviews {
   rating?: number;
   /** @wixFieldType date */
   reviewDate?: Date | string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  /** @wixFieldType image */
   customerPhoto?: string;
   /** @wixFieldType text */
   source?: string;
@@ -134,7 +105,7 @@ export interface ReasonsToChooseUs {
   reasonTitle?: string;
   /** @wixFieldType text */
   reasonDescription?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  /** @wixFieldType image */
   reasonImage?: string;
   /** @wixFieldType number */
   displayOrder?: number;
@@ -157,7 +128,7 @@ export interface SeatingTypes {
   seatingTypeName?: string;
   /** @wixFieldType text */
   description?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  /** @wixFieldType image */
   image?: string;
   /** @wixFieldType number */
   maxCapacity?: number;

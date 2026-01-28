@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Calendar, Users, Clock, User, Mail, Phone, MessageSquare, Check, AlertCircle } from 'lucide-react';
-import { BaseCrudService } from '@/integrations';
-import { Bookings } from '@/entities';
+import { Calendar, Users, Clock, User, Mail, Phone, MessageSquare, Check } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
@@ -21,8 +19,6 @@ import {
 export default function BookingPage() {
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState('');
   const [formData, setFormData] = useState({
     date: '',
     time: '',
@@ -50,33 +46,9 @@ export default function BookingPage() {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitError('');
-
-    try {
-      const bookingData: Bookings = {
-        _id: crypto.randomUUID(),
-        customerName: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        bookingDate: formData.date,
-        bookingTime: formData.time,
-        numberOfGuests: parseInt(formData.guests),
-        seatingType: formData.seating,
-        specialRequests: formData.specialRequests,
-        bookingStatus: 'pending',
-      };
-
-      await BaseCrudService.create('bookings', bookingData);
-      setCurrentStep(4);
-    } catch (error) {
-      setSubmitError('Failed to save booking. Please try again.');
-      console.error('Booking submission error:', error);
-    } finally {
-      setIsSubmitting(false);
-    }
+    setCurrentStep(4);
   };
 
   const isStepValid = () => {

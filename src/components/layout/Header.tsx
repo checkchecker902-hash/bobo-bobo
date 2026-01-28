@@ -15,7 +15,6 @@ export default function Header() {
     { name: 'Reviews', path: '/reviews' },
     { name: 'FAQs', path: '/faqs' },
     { name: 'Book Table', path: '/booking' },
-    { name: 'Dashboard', path: '/bookings-dashboard' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
