@@ -2,6 +2,7 @@ import { MemberProvider } from '@/integrations';
 import { createBrowserRouter, RouterProvider, Navigate, Outlet } from 'react-router-dom';
 import { ScrollToTop } from '@/lib/scroll-to-top';
 import ErrorPage from '@/integrations/errorHandlers/ErrorPage';
+import { MemberProtectedRoute } from '@/components/ui/member-protected-route';
 import { MenusPage, menusRouteLoader } from './restaurants-menus';
 import PreLandingPage from './pages/PreLandingPage';
 import HomePage from './pages/HomePage';
@@ -10,6 +11,7 @@ import LocationPage from './pages/LocationPage';
 import ReviewsPage from './pages/ReviewsPage';
 import FAQsPage from './pages/FAQsPage';
 import BookingPage from './pages/BookingPage';
+import BookingsDashboardPage from './pages/BookingsDashboardPage';
 
 // Layout component that includes ScrollToTop
 function Layout() {
@@ -59,6 +61,14 @@ const router = createBrowserRouter([
       {
         path: "booking",
         element: <BookingPage />,
+      },
+      {
+        path: "dashboard",
+        element: (
+          <MemberProtectedRoute messageToSignIn="Sign in to access the bookings dashboard">
+            <BookingsDashboardPage />
+          </MemberProtectedRoute>
+        ),
       },
       {
         path: "*",
